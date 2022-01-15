@@ -1,0 +1,29 @@
+section {
+  height: 600px;
+  background-color: white;
+  margin-top: 350px;
+  margin-inline: -72px;
+  display: flex;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  a {
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.4);
+  }
+}
+
+.text-div {
+  width: calc(50% - 144px);
+  padding: 72px;
+}
+
+.img-div {
+  width: 50%;
+}

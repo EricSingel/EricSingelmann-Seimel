@@ -1,0 +1,39 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 72px;
+  background-color: rgba(18, 24, 23, 1);
+  font-size: 16px;
+  z-index: 999;
+
+  img {
+    height: 68px;
+    cursor: pointer;
+  }
+
+  div {
+    height: 84px;
+    display: flex;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: calc(84px - 16px);
+      padding: 8px;
+      padding-inline: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      color: rgb(204, 204, 204);
+
+      &:hover {
+        background-color: #5221e6;
+        color: white;
+      }
+    }
+  }
+}
