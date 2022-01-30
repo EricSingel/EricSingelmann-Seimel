@@ -8,6 +8,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { SkillsComponent } from './frontpage/skills/skills.component';
 
 
 @Component({
@@ -30,6 +31,7 @@ import {
 export class AppComponent implements OnInit {
   title = 'eric.singelmann';
   currentRoute = '';
+  skills :any = new SkillsComponent();
 
   constructor(private router: Router){}
 
