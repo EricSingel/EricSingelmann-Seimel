@@ -22,6 +22,7 @@
     height: 65%;
     width: 100%;
     object-fit: cover;
+    display: block;
   }
 }
 
@@ -30,7 +31,6 @@
   padding: 32px;
   padding-bottom: 0;
   background-color: white;
-  margin-top: -7px;
 }
 
 .item-1 {

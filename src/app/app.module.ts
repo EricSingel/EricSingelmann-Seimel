@@ -13,6 +13,7 @@ import { IntroductionComponent } from './frontpage/introduction/introduction.com
 import { SkillsComponent } from './frontpage/skills/skills.component';
 import { PortfolioComponent } from './frontpage/portfolio/portfolio.component';
 import { ContactComponent } from './frontpage/contact/contact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ContactComponent } from './frontpage/contact/contact.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [],
