@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
@@ -14,6 +13,7 @@ import { SkillsComponent } from './frontpage/skills/skills.component';
 import { PortfolioComponent } from './frontpage/portfolio/portfolio.component';
 import { ContactComponent } from './frontpage/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InViewportModule } from 'ng-in-viewport';
 
 @NgModule({
   declarations: [
@@ -33,8 +33,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    InViewportModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}
