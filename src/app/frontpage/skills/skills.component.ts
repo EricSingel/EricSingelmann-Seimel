@@ -31,9 +31,7 @@ export class SkillsComponent implements OnInit {
   @HostListener('window:scroll') onScroll(e:Event):void {
     if(window.scrollY >= 1099 && !this.scrollToSkills && window.scrollY < 1660){
       this.scrollToSkills = true
-      setTimeout(()=> {
-        this.typeWriter();
-      }, 50)
+      this.typeWriter();
       console.log(this.scrollToSkills)
     }
     else if (window.scrollY > 1660 && this.scrollToSkills || window.scrollY < 660 && this.scrollToSkills) {
