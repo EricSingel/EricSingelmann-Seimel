@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
 import {
@@ -8,7 +8,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { SkillsComponent } from './frontpage/skills/skills.component';
+
 
 
 @Component({
@@ -31,13 +31,10 @@ import { SkillsComponent } from './frontpage/skills/skills.component';
 export class AppComponent implements OnInit {
   title = 'eric.singelmann';
   currentRoute = '';
-  skills :any = new SkillsComponent();
 
   constructor(private router: Router){}
 
-  @HostListener('window:scroll') onScroll(e:Event):void {
-    console.log(window.scrollY);
-  }
+
 
   ngOnInit(): void {
       this.currentRoute = this.router.url
@@ -45,5 +42,37 @@ export class AppComponent implements OnInit {
       AOS.init();
       
   }
+
   
 }
+// @Directive({selector: 'app-skills'},)
+// export class AppSkills implements AfterContentInit {
+  //   @ContentChild(SkillsComponent) contentChild!: SkillsComponent;
+  //   constructor() {   
+    //   }
+    
+    //   ngAfterContentInit(): void {
+      //     this.contentChild.typeWriter();
+      //   }
+      // }
+      
+      
+      // @Pipe({
+      //   name: 'skills'
+      // })
+      // export class SkillsPipe implements PipeTransform {
+      //   skills: any = new SkillsComponent();
+      //   constructor() {
+          
+      //   }
+      //   transform(value: any, ...args: any[]) {
+            
+      //   }
+
+      //   @HostListener('window:scroll') onScroll(e:Event):void {
+      //     console.log(window.scrollY);
+      //     if(window.scrollY >= 1099){
+      //       this.skills.typeWriter();
+      //     }
+      //   }
+      // }

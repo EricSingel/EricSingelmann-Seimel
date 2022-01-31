@@ -1,7 +1,7 @@
 <section>
   <div class="text-div">
-    <h2 (click)="typeWriter()">Skillset</h2>
-    <p [innerText]="viewText"></p>
+    <h2>Skillset</h2>
+    <p *ngIf="scrollToSkills" [innerText]="viewText"></p>
   </div>
   <div class="grid-skills">
     <div>
