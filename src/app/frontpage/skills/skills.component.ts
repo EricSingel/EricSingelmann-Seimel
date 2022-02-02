@@ -5,6 +5,8 @@ import {
   style,
   animate,
   transition,
+  query,
+  stagger,
 } from '@angular/animations';
 import { InViewportMetadata } from 'ng-in-viewport';
 
@@ -13,17 +15,26 @@ import { InViewportMetadata } from 'ng-in-viewport';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
   animations: [
-    trigger('fadeIn',[
-      transition(':leave', [
-        style({ opacity: 1 }),
-        animate('250ms', style({opacity: 0}))
+    trigger('spanAnimation', [
+      transition('* => *', [ // each time the binding value changes
+        // query(':leave', [
+        //   stagger(100, [
+        //     animate('0.5s', style({ opacity: 0 }))
+        //   ])
+        // ], { optional: true }),
+        query(':enter', [
+          style({ opacity: 0 }),
+          stagger(100, [
+            animate('0.5s', style({ opacity: 1 }))
+          ])
+        ], { optional: true })
       ])
     ])
   ]
 })
 export class SkillsComponent implements OnInit {
   i: number = 0;
-  skillsTxt: string[] = [...'Lorem ipsum dummy text blabla.',];
+  skillsTxt: string[] = [];
   speed: number = 100;
   viewText: string ='';
   scrollToSkills: boolean = false;
@@ -31,48 +42,23 @@ export class SkillsComponent implements OnInit {
     
   }
 
-  // @HostListener('window:scroll') onScroll(e:Event):void {
-  //   if(window.scrollY >= 1099 && !this.scrollToSkills && window.scrollY < 1660){
-  //     this.scrollToSkills = true
-  //     this.typeWriter();
-  //     console.log(this.scrollToSkills)
-  //   }
-  //   else if (window.scrollY > 1660 && this.scrollToSkills || window.scrollY < 660 && this.scrollToSkills) {
-  //     this.scrollToSkills = false
-  //     console.log(this.scrollToSkills)
-  //   }
-
-  //   // console.log(window.scrollY)
-  // }
-
   ngOnInit(): void {
   }
+  // _event: {"__@InViewportMetadata@12029": { entry: any; }; target: any; visible: any; }
+  showLetters( ) {
+      this.scrollToSkills = !this.scrollToSkills;
+      console.log(this.scrollToSkills)
 
-  showLetters(event: { "__@InViewportMetadata@12029": { entry: any; }; target: any; visible: any; }) {
 
-    const addClass = event.visible ? 'active' : 'inactive';
-    this.renderer.addClass(event.target, addClass);
-
-    const rmClass = event.visible ? 'inactive' : 'active';
-    this.renderer.removeClass(event.target, rmClass);
+    if (this.scrollToSkills) {
+      this.skillsTxt = [...'Lorem ipsum dummy text blabla.',];
+    } else {
+      this.skillsTxt = [];
+    }
   }
 
   getAnimationDelay(index: number) {
-    return `${10 * index}ms`;
+    return `${100 * index}ms`;
   }
-
-  // typeWriter() {
-  //   this.viewText = '';
-  //   let intval=  setInterval(()=>{
-  //     this.viewText += this.txt.charAt(this.i);
-  //     this.i++;
-  //     // console.log(this.viewText)
-  //     if (this.i == this.txt.length-1) {
-  //       clearInterval(intval)
-  //       this.i=0;
-  //     }  
-  //   },this.speed)
-
-  // }
 
 }

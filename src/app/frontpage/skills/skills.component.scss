@@ -29,24 +29,28 @@ section {
     color: black;
     border-radius: 16px;
     margin-top: -50px;
-
-    &.active {
-      animation: in 225ms ease-in;
-    }
-  }
-
-  @keyframes in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 
   //   Parent of the .skills-img
   div {
     position: relative;
+  }
+}
+
+.active {
+  animation: in 225ms ease-in 1;
+}
+
+.inactive {
+  visibility: hidden;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
