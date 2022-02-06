@@ -1,7 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import {
   trigger,
-  state,
   style,
   animate,
   transition,
@@ -17,11 +16,11 @@ import { InViewportMetadata } from 'ng-in-viewport';
   animations: [
     trigger('spanAnimation', [
       transition('* => *', [ // each time the binding value changes
-        // query(':leave', [
-        //   stagger(100, [
-        //     animate('0.5s', style({ opacity: 0 }))
-        //   ])
-        // ], { optional: true }),
+      //   query(':leave', [
+      //     stagger(100, [
+      //       animate('50ms', style({ opacity: 0 }))
+      //     ])
+      //   ], { optional: true }),
         query(':enter', [
           style({ opacity: 0 }),
           stagger(100, [
@@ -33,32 +32,58 @@ import { InViewportMetadata } from 'ng-in-viewport';
   ]
 })
 export class SkillsComponent implements OnInit {
-  i: number = 0;
-  skillsTxt: string[] = [];
-  speed: number = 100;
-  viewText: string ='';
-  scrollToSkills: boolean = false;
-  constructor(private renderer: Renderer2) { 
+  skillsTxt: string = 'Lorem ipsum dummy text blabla.';
+  htmlTxt: string[] = [];
+  cssTxt: string[] = [];
+  jsTxt: string[] = [];
+  angularTxt: string[] = [];
+  scrollToSkills: boolean = true;
+  matchMedia: any = window.matchMedia('(max-width: 1000px)')
+  constructor() { 
     
   }
 
   ngOnInit(): void {
   }
-  // _event: {"__@InViewportMetadata@12029": { entry: any; }; target: any; visible: any; }
-  showLetters( ) {
+
+  loadTxt() {
       this.scrollToSkills = !this.scrollToSkills;
       console.log(this.scrollToSkills)
+      console.log(this.matchMedia)
 
+    if (this.scrollToSkills && !this.matchMedia.matches) {
+      setTimeout(()=>{
+        this.htmlTxt = [...'HTML',];
+      },300)
+      setTimeout(()=>{
+        this.cssTxt = [...'CSS',];
+      },600)
+      setTimeout(()=>{
+        this.jsTxt = [...'Javascript',];
+      },900)
+      setTimeout(()=>{
+        this.angularTxt = [...'Angular',];
+      },1200)
 
-    if (this.scrollToSkills) {
-      this.skillsTxt = [...'Lorem ipsum dummy text blabla.',];
-    } else {
-      this.skillsTxt = [];
+    } 
+    else if(this.matchMedia.matches){
+      this.fullTxt();
+    }
+    else{
+      this.htmlTxt = []
+      this.cssTxt = []
+      this.jsTxt = []
+      this.angularTxt = []
     }
   }
 
-  getAnimationDelay(index: number) {
-    return `${100 * index}ms`;
+  fullTxt(){
+    return (
+      this.htmlTxt = [...'HTML',],
+      this.cssTxt = [...'CSS',],
+      this.jsTxt = [...'Javascript',],
+      this.angularTxt = [...'Angular',]
+    )
   }
 
 }

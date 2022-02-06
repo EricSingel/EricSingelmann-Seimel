@@ -1,7 +1,7 @@
 section {
   display: flex;
   justify-content: flex-end;
-  height: 500px;
+  height: 100vh;
   margin-top: 84px;
   margin-right: -72px;
 
@@ -26,4 +26,31 @@ section {
   left: 72px;
   color: white;
   z-index: 999;
+}
+
+@media all and (max-width: 1000px) {
+  section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    img {
+      height: 40%;
+      width: calc(100% + var(--body-padding-mobile) * 2);
+      object-fit: cover;
+    }
+  }
+
+  .bg-intro {
+    position: static;
+    height: 50%;
+    width: calc(100% + var(--body-padding-mobile) * 2);
+    margin-inline: var(--body-padding-mobile);
+  }
+
+  .text-block {
+    position: static;
+    padding-inline: var(--body-padding-mobile);
+  }
 }

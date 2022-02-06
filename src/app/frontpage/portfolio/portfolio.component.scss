@@ -26,37 +26,77 @@
   }
 }
 
-.item > div {
-  height: calc(35% - 32px);
-  padding: 32px;
-  padding-bottom: 0;
-  background-color: white;
+.project {
+  cursor: pointer;
+  overflow: hidden;
+
+  img {
+    transition: 250ms ease-in;
+    transform: scale(1);
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+    div {
+      background-color: rgba($color: #ffffff, $alpha: 0.97);
+      h3 {
+        text-decoration: underline;
+        color: var(--hover-color);
+      }
+      p {
+        color: var(--hover-color);
+      }
+    }
+  }
+
+  div {
+    height: calc(35% - 32px);
+    padding: 32px;
+    padding-bottom: 0;
+    background-color: white;
+  }
 }
 
-.item-1 {
+.grid-header {
   grid-area: header;
   align-self: center;
+  cursor: default;
 
   h2 {
     margin-top: 0;
   }
 }
-.item-2 {
+.project-2 {
   grid-area: work1;
 }
-.item-3 {
+.project-3 {
   grid-area: work2;
 
   img {
     background-color: #1f96ff;
   }
 }
-.item-4 {
+.project-4 {
   grid-area: work3;
 }
-.item-5 {
+.project-5 {
   grid-area: work4;
 }
-.item-6 {
+.link {
   grid-area: link;
+}
+
+@media all and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project {
+    div {
+      padding: 16px;
+    }
+  }
 }

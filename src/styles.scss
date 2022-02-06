@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --hover-color: rgba(0, 0, 0, 0.7);
+  --body-padding-mobile: 36px;
+  --body-padding: 72px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,7 +14,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   background-color: black;
   font-size: clamp(1rem, 0.5rem + 2.5vw, 1.5rem);
-  padding-inline: 72px;
+  padding-inline: var(--body-padding);
 }
 
 h1 {
@@ -35,4 +40,14 @@ h4 {
 h5 {
   font-size: 16px;
   font-weight: bold;
+}
+
+@media all and (max-width: 1000px) {
+  body {
+    padding-inline: var(--body-padding-mobile);
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
 }

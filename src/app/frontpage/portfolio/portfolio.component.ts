@@ -12,5 +12,8 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showProject(name:string){
+    window.open(`http://${name}.eric-singelmann-seimel.de/`,'_blank')
+  }
 
 }

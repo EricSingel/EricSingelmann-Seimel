@@ -1,11 +1,15 @@
 <div class="container">
-  <div class="item item-1">
+  <div class="project grid-header">
     <h2>
       Work that I´ve done <br />
       for the past 4 months
     </h2>
   </div>
-  <div class="item item-2" data-aos="flip-right">
+  <div
+    class="project project-2"
+    data-aos="flip-right"
+    (click)="showProject('pokedex')"
+  >
     <img src="assets/img/pokedex.jpg" alt="Pokedex" />
     <div>
       <h3>Pokedex</h3>
@@ -15,7 +19,11 @@
       </p>
     </div>
   </div>
-  <div class="item item-3" data-aos="flip-left">
+  <div
+    class="project project-3"
+    data-aos="flip-left"
+    (click)="showProject('sharkie')"
+  >
     <img src="assets/img/Mesa de trabajo 1.png" alt="Sharkiegame" />
     <div>
       <h3>Sharkie</h3>
@@ -25,7 +33,11 @@
       </p>
     </div>
   </div>
-  <div class="item item-4" data-aos="flip-right">
+  <div
+    class="project project-4"
+    data-aos="flip-right"
+    (click)="showProject('kanbanboard')"
+  >
     <img src="assets/img/kanban.jpg" alt="Kanbanboard" />
     <div>
       <h3>Join - Kanbanboard</h3>
@@ -35,7 +47,11 @@
       </p>
     </div>
   </div>
-  <div class="item item-5" data-aos="flip-left">
+  <div
+    class="project project-5"
+    data-aos="flip-left"
+    (click)="showProject('ring-of-fire')"
+  >
     <img src="assets/img/ring of fire.jpg" alt="RingofFire" />
     <div>
       <h3>Ring of Fire</h3>
@@ -45,7 +61,7 @@
       </p>
     </div>
   </div>
-  <div class="item item-6">
+  <div class="project link">
     <div>
       <p></p>
     </div>

@@ -31,7 +31,7 @@ import {
 export class AppComponent implements OnInit {
   title = 'eric.singelmann';
   currentRoute = '';
-
+  mobile: any = window.matchMedia('(max-width:1000px)').matches
   constructor(private router: Router){}
 
 
@@ -39,40 +39,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this.currentRoute = this.router.url
       console.log(this.currentRoute)
-      AOS.init();
+      AOS.init({
+        disable: this.mobile ? true : false
+    });
       
   }
 
   
 }
-// @Directive({selector: 'app-skills'},)
-// export class AppSkills implements AfterContentInit {
-  //   @ContentChild(SkillsComponent) contentChild!: SkillsComponent;
-  //   constructor() {   
-    //   }
-    
-    //   ngAfterContentInit(): void {
-      //     this.contentChild.typeWriter();
-      //   }
-      // }
-      
-      
-      // @Pipe({
-      //   name: 'skills'
-      // })
-      // export class SkillsPipe implements PipeTransform {
-      //   skills: any = new SkillsComponent();
-      //   constructor() {
-          
-      //   }
-      //   transform(value: any, ...args: any[]) {
-            
-      //   }
-
-      //   @HostListener('window:scroll') onScroll(e:Event):void {
-      //     console.log(window.scrollY);
-      //     if(window.scrollY >= 1099){
-      //       this.skills.typeWriter();
-      //     }
-      //   }
-      // }

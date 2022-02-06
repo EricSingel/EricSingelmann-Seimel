@@ -37,23 +37,6 @@ section {
   }
 }
 
-.active {
-  animation: in 225ms ease-in 1;
-}
-
-.inactive {
-  visibility: hidden;
-}
-
-@keyframes in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .skills-img {
   position: absolute;
   right: 0;
@@ -70,5 +53,51 @@ section {
 
   img {
     height: 90px;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-inline: 0;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 1;
+    }
+  }
+
+  .grid-container {
+    min-width: 100px;
+
+    p {
+      margin-top: 0;
+      border-radius: 8px;
+      padding: 4px;
+    }
+  }
+
+  .skills-img {
+    width: 50px;
+    height: 70px;
+    transform: scale(1);
+
+    img {
+      height: 30px;
+    }
+  }
+
+  .text-div {
+    width: 100%;
   }
 }

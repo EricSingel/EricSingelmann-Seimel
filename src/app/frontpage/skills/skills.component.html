@@ -1,41 +1,59 @@
 <section>
-  <div class="text-div">
+  <div
+    class="text-div"
+    inViewport
+    [inViewportOptions]="{ threshold: [0.8] }"
+    (inViewportAction)="loadTxt()"
+  >
     <h2>Skillset</h2>
-    <p
-      inViewport
-      (inViewportAction)="showLetters()"
-      [@spanAnimation]="skillsTxt.length"
-    >
-      <span
-        [innerHTML]="char == ' ' ? '&nbsp;' : char"
-        *ngFor="let char of skillsTxt; let i = index"
-      ></span>
+    <p>
+      <span [innerHTML]="skillsTxt"></span>
     </p>
   </div>
   <div class="grid-skills">
-    <div>
-      <div class="skills-img" data-aos="zoom-in" data-aos-delay="100">
+    <div class="grid-container">
+      <div class="skills-img" data-aos="zoom-in" data-aos-delay="300">
         <img src="assets/img/html-5.png" alt="" />
       </div>
-      <p>HTML</p>
+      <p [@spanAnimation]="htmlTxt.length">
+        <span
+          [innerHTML]="char == ' ' ? '&nbsp;' : char"
+          *ngFor="let char of htmlTxt"
+        ></span>
+      </p>
     </div>
-    <div>
-      <div class="skills-img" data-aos="zoom-in" data-aos-delay="200">
+    <div class="grid-container">
+      <div class="skills-img" data-aos="zoom-in" data-aos-delay="600">
         <img src="assets/img/css-3.png" alt="" />
       </div>
-      <p>CSS</p>
+      <p [@spanAnimation]="cssTxt.length">
+        <span
+          [innerHTML]="char == ' ' ? '&nbsp;' : char"
+          *ngFor="let char of cssTxt"
+        ></span>
+      </p>
     </div>
-    <div>
-      <div class="skills-img" data-aos="zoom-in" data-aos-delay="300">
+    <div class="grid-container">
+      <div class="skills-img" data-aos="zoom-in" data-aos-delay="900">
         <img src="assets/img/java-script.png" alt="" />
       </div>
-      <p>Javascript</p>
+      <p [@spanAnimation]="jsTxt.length">
+        <span
+          [innerHTML]="char == ' ' ? '&nbsp;' : char"
+          *ngFor="let char of jsTxt"
+        ></span>
+      </p>
     </div>
-    <div>
-      <div class="skills-img" data-aos="zoom-in" data-aos-delay="400">
+    <div class="grid-container">
+      <div class="skills-img" data-aos="zoom-in" data-aos-delay="1200">
         <img src="assets/img/angular.png" alt="" />
       </div>
-      <p>Angular</p>
+      <p [@spanAnimation]="angularTxt.length">
+        <span
+          [innerHTML]="char == ' ' ? '&nbsp;' : char"
+          *ngFor="let char of angularTxt"
+        ></span>
+      </p>
     </div>
   </div>
 </section>
