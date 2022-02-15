@@ -92,9 +92,13 @@
   .container {
     display: flex;
     flex-direction: column;
+    margin-top: var(--margin-top-mobile);
   }
 
   .project {
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    transform: rotate(0);
     div {
       padding: 16px;
     }

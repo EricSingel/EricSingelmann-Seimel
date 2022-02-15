@@ -1,7 +1,7 @@
 section {
   height: 600px;
   background-color: white;
-  margin-inline: -72px;
+  margin-inline: calc(var(--body-padding) * (-1));
   display: flex;
   overflow: hidden;
 
@@ -20,10 +20,35 @@ section {
 }
 
 .text-div {
-  width: calc(50% - 144px);
-  padding: 72px;
+  width: calc(50% - (var(--body-padding) * 2));
+  padding: var(--body-padding);
 }
 
 .img-div {
   width: 50%;
+}
+
+@media all and (max-width: 1000px) {
+  section {
+    flex-direction: column;
+    margin-inline: calc(var(--body-padding-mobile) * (-1));
+    height: auto;
+  }
+
+  .img-div {
+    opacity: 1;
+    width: 100%;
+    transform: translate(0);
+  }
+
+  .text-div {
+    width: calc(100% - (var(--body-padding-mobile) * 2));
+    padding: var(--body-padding-mobile);
+    opacity: 1;
+    transform: translate(0);
+
+    h2 {
+      margin-top: 0;
+    }
+  }
 }

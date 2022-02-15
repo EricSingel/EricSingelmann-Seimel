@@ -6,7 +6,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 72px;
+  padding: 0px var(--body-padding);
   background-color: rgba(18, 24, 23, 1);
   font-size: 16px;
   z-index: 999;
@@ -36,4 +36,7 @@ header {
       }
     }
   }
+}
+
+@media all and (max-width: 1000px) {
 }

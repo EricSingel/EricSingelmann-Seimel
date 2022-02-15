@@ -46,7 +46,6 @@ section {
     position: static;
     height: 50%;
     width: calc(100% + var(--body-padding-mobile) * 2);
-    margin-inline: var(--body-padding-mobile);
   }
 
   .text-block {

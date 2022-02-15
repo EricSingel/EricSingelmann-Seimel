@@ -78,7 +78,8 @@ section {
   }
 
   .grid-container {
-    min-width: 100px;
+    min-width: 150px;
+    min-height: 150px;
 
     p {
       margin-top: 0;
@@ -88,12 +89,13 @@ section {
   }
 
   .skills-img {
-    width: 50px;
-    height: 70px;
+    width: 65px;
+    height: 80px;
     transform: scale(1);
+    margin-bottom: -20px;
 
     img {
-      height: 30px;
+      height: 40px;
     }
   }
 
