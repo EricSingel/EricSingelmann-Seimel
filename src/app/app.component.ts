@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, Host, HostListener, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
 import {
@@ -44,6 +44,12 @@ export class AppComponent implements OnInit {
     });
       
   }
+
+  // @HostListener("window:hashchange", ['$event']) 
+  // scrollBack() {
+  //     window.scrollTo(window.scrollX, window.scrollY - 100);
+  //     console.log(event)
+  // };
 
   
 }

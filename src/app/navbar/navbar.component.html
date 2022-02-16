@@ -5,10 +5,23 @@
     src="assets/img/ESLogo.png"
     alt=""
   />
-  <div>
-    <a href="#" routerLink="/" routerLinkActive="active">Home</a>
+  <div *ngIf="!mobile">
+    <a href="#">Home</a>
     <a href="#about-me">About</a>
-    <a routerLink="/" routerLinkActive="active">Portfolio</a>
-    <a routerLink="/" routerLinkActive="active">Contact</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="mobile-btn" *ngIf="mobile" (click)="openMenu()">
+    <img *ngIf="!menuOpen" src="assets/img/menu-4-32.ico" alt="" />
+    <img *ngIf="menuOpen" src="assets/img/x-mark-32.ico" alt="" />
+  </div>
+  <div
+    class="nav-menu-links"
+    [ngClass]="{ 'nav-menu-links-open': menuOpen == true }"
+  >
+    <a href="#" (click)="openMenu()">Home</a>
+    <a href="#about-me" (click)="openMenu()">About</a>
+    <a href="#portfolio" (click)="openMenu()">Portfolio</a>
+    <a href="#contact" (click)="openMenu()">Contact</a>
   </div>
 </header>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,8 +12,18 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // ngAfterViewChecked(){
+  //   this.scrollBack();
+  // }
+
   showProject(name:string){
     window.open(`http://${name}.eric-singelmann-seimel.de/`,'_blank')
   }
+
+  // scrollBack() {
+  //   window.scrollTo(window.scrollX, window.scrollY - 100);
+  //   // console.log(event)
+  //   console.log('hi')
+  // };
 
 }

@@ -3,6 +3,7 @@
   --body-padding-mobile: 36px;
   --body-padding: 72px;
   --margin-top-mobile: 40px;
+  --navbar-bg-color: rgba(18, 24, 23, 1);
 }
 
 html {
@@ -41,6 +42,13 @@ h4 {
 h5 {
   font-size: 16px;
   font-weight: bold;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
 }
 
 @media all and (max-width: 1000px) {
