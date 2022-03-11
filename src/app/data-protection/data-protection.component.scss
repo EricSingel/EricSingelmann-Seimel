@@ -1,0 +1,16 @@
+div {
+  color: white;
+  margin-top: 100px;
+}
+
+@media all and (max-width: 1000px) {
+  div {
+    margin-inline: -24px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+}

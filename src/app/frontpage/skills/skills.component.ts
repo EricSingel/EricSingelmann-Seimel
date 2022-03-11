@@ -32,7 +32,9 @@ import { InViewportMetadata } from 'ng-in-viewport';
   ]
 })
 export class SkillsComponent implements OnInit {
-  skillsTxt: string = 'I learned a bunch of skills in the developer academy so i listed them here in an grid.';
+  skillsTxt: string = 
+  `I learned a bunch of skills in the developer academy so i 
+  listed them here in a grid. I have specific knowledge from more than 20 modules.`;
   htmlTxt: string[] = [];
   cssTxt: string[] = [];
   jsTxt: string[] = [];

@@ -14,6 +14,7 @@ import { PortfolioComponent } from './frontpage/portfolio/portfolio.component';
 import { ContactComponent } from './frontpage/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InViewportModule } from 'ng-in-viewport';
+import { EmailComponent } from './email/email.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { InViewportModule } from 'ng-in-viewport';
     SkillsComponent,
     PortfolioComponent,
     ContactComponent,
+    EmailComponent,
   ],
   imports: [
     BrowserModule,

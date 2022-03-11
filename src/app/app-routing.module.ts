@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
+import { EmailComponent } from './email/email.component';
 import { ContactComponent } from './frontpage/contact/contact.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ImprintComponent } from './imprint/imprint.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'email',
+    component: EmailComponent
   }
 ];
 

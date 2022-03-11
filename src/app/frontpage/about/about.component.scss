@@ -29,6 +29,10 @@ section {
   width: 50%;
 }
 
+#about-me.anchor {
+  top: -100px;
+}
+
 @media all and (max-width: 1000px) {
   section {
     flex-direction: column;
